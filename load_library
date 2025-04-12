@@ -1,0 +1,12 @@
+import os
+import json
+
+data_file = "library_data.json"  
+
+def load_library():
+    if os.path.exists(data_file):
+        with open(data_file, 'r') as file:
+            content = file.read().strip()
+            if content:
+                return json.loads(content)
+    return []
